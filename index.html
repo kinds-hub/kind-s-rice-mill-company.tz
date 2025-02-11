@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Color Scheme */
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5DA399;
+            --accent-color: #FF7F50;
+            --light-bg: #F8F9FA;
+            --dark-text: #2C3E50;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 10%;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1.2rem 10%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 3rem 10%;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-item h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 1rem 1rem;
+            font-size: 1.4rem;
+        }
+
+        .portfolio-item p {
+            padding: 0 1rem 1.5rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        #contact ul {
+            list-style: none;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        #contact li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #contact a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: var(--accent-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 10%;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 5%;
+            }
+
+            nav {
+                padding: 1rem 5%;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            main {
+                padding: 2rem 5%;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .portfolio {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>kind's rice mill company.Tz</h1>
+        <p>Showcasing My Projects and Skills</p>
+    </header>
+
+   
+    <nav>
+        <a href="about_us.html">About</a>
+        <a href="index.html">home</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">register</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                At kind's Rice Mill Company, we are dedicated to providing high-quality, locally sourced rice that meets the highest standards of purity and taste. With years of experience in the rice milling industry, we combine traditional expertise with modern technology to ensure every grain is processed with care. Our commitment to excellence, sustainability, and customer satisfaction has made us a trusted name in the industry. Whether for households or large-scale distribution, we take pride in delivering premium rice that nourishes families and communities. At Kind's Rice Mill Company, quality isn’t just a standard—it’s our promise.
+            </p>
+        </section>
+
+        <section id="portfolio">
+            <h2>My Work</h2>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <img src="kununua zao la mpunga porini.jpg" alt="buying Rice">
+                    <h3>Rice Farming</h3>
+                    <p>I worked in rice farming using modern farming techniques.I focused on increasing yields and improving the quality of rice.My projects helped many farmers improve their production.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="mchele.jpg" alt="selling Rice">
+                    <h3>selling rice</h3>
+                    <p>.</p>I started a business selling high-quality rice grown using modern farming methods. This website helped customers easily purchase rice and improved the income of farmers
+                </div>
+                <div class="portfolio-item">
+                    <img src="kusambaza mchele.jpg" alt="Distributing Rice">
+                    <h3>Distributing Rice</h3>
+                    <p>.</p>I started a service to distribute rice to many customers, from farmers to markets and stores. This service made a big impact on the rice market, benefiting farmers
+                </div>
+                <div class="portfolio-item">
+                    <a href="kununua zao la mpunga porini.jpg"></a>
+                    <h3>Rice Farming</h3>
+                    <p>I worked in rice farming using modern farming techniques.I focused on increasing yields and improving the quality
+                         of rice.My projects helped many farmers improve their production.</p>
+                         <a href="kununua zao la mpunga porini.jpg">click here to see the image of rice</a>  
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you’d like to work with me or have any questions, feel free to reach out:</p>
+            <ul>
+                <li>Email: <a href="kindsamos6@gmail.com">kindsamos6@gmail.com</a></li>
+                <li>Phone: +255-683-3769-18</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/kind's" target="_blank">linkedin.com/in/kind's</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Amos Kind's. All rights reserved. | <a href=>Back to top</a></p>
+    </footer>
+</body>
+</html>
